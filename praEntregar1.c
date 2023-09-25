@@ -13,12 +13,41 @@ int main() {
     scanf("%s", &escolha);
     
     if (escolha == 'D'|| escolha == 'd'){
-        printf("a conversao de real para dolar fica: %.2f\n", real * 5);
+        printf("a conversao de real para dolar fica: %.2f\n", real/5);
     }else if(escolha == 'E' || escolha == 'e'){
-        printf("a conversao de real para euro fica: %.2f\n", real * 5.2);
+        printf("a conversao de real para euro fica: %.2f\n", real/5.2);
     }else{
         printf("nao existe essa opcao");
         }
+    return 0;
+}
+
+
+//////////////////////// COM SWITCH CASE //////////////////////////
+
+#include <stdio.h>
+
+int main() {
+    float real;
+    char escolha;
+
+    printf("digite um valor: ");
+    scanf("%f", &real);
+    printf("voce quer transformar para Dolar (D/d) ou Euro (E/e)? ");
+    scanf("%s", &escolha);
+
+    escolha = tolower(escolha);
+    switch (escolha){
+        case 'd':
+            printf("a conversao de real para dolar e: %.2f\n", real/5);
+            break;
+        case 'e':
+            printf("a conversao de real para euro e: %.2f\n", real/5.2);
+            break;
+        default:
+            printf("opcao invalida");
+
+    }
     return 0;
 }
 

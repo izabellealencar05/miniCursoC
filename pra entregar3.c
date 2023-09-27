@@ -10,11 +10,12 @@ int main(){
 
   printf("digite um numero: ");
   scanf("%d %d", &x, &y);
+   
+  if(x >= 0 && y >= 0){ 
     int mult = x * y;
-    int soma = x + y;
-  if(x >= 0 && y >= 0){
     printf("a multiplicacao entre eles e: %d", mult);
   }else {
+    int soma = x + y;
     printf("a soma entre eles e: %d", soma);
   }
 }

@@ -1,21 +1,28 @@
-//Faça uma calculadora que receba números inteiros e posteriormente a
-//operação a ser feita com esses número e então retorne o resultado.
 #include <stdio.h>
-int soma (int x, int y){
+
+float soma(float x, float y) {
     return x + y;
 }
-int sub (int x, int y){
-    return y - x;
+
+float sub(float x, float y) {
+    return x - y;
 }
-int mult (int x, int y){
+
+float mult(float x, float y) {
     return x * y;
 }
-int div (int x, int y){
-    return x/y;
+
+float div(float x, float y) {
+    if (y != 0) {
+        return x / y;
+    } else {
+        printf("erro");
+        return 0;
+    }
 }
-int main(){
-    float x;
-    float y;
+
+int main() {
+    float x, y;
     printf("\n========================MENU=====================");
     printf("\n                1 - soma                         ");
     printf("\n                2 - subtracao                    ");
@@ -23,31 +30,31 @@ int main(){
     printf("\n                4 - divisao                      ");
     printf("\n=================================================");
 
-
-
-
     int opc;
     printf("\nescolha uma opcao: ");
     scanf("%d", &opc);
     printf("\ndigite um numero: ");
-    scanf("%d", &x);
+    scanf("%f", &x);
     printf("\ndigite outro numero: ");
-    scanf("%d", &y);
+    scanf("%f", &y);
 
-    switch(opc){
-    case 1:
-        printf("%f", soma(x,y));
-        break;
-    case 2:
-        printf("%f", sub(x, y));
-        break;
-    case 3:
-        printf("%f", mult(x, y));
-        break;
-    case 4:
-        printf("%f", div(x,y));
-        break;
-    default:
-        break;
+    switch (opc) {
+        case 1:
+            printf("a soma e: %.2f\n", soma(x, y));
+            break;
+        case 2:
+            printf("a subtracao e: %.2f\n", sub(x, y));
+            break;
+        case 3:
+            printf("a multiplicacao e: %.2f\n", mult(x, y));
+            break;
+        case 4:
+            printf("a divisao e: %.2f\n", div(x, y));
+            break;
+        default:
+            printf("opcao invalida!\n");
+            break;
     }
+
+    return 0;
 }
